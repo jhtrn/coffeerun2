@@ -4,6 +4,7 @@ module.exports = {
   },
   "extends": "eslint:recommended",
   "rules": {
+    "no-console": "off",
     "indent": [
       "error",
       2

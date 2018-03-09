@@ -8,9 +8,7 @@
   }
 
   Truck.prototype.createOrder = function(order) {
-    /* eslint-disable no-console */
     console.log("Adding order for " + order.emailAddress);
-    /* eslint-disable no-console */
     this.db.add(order.emailAddress, order);
   };
 

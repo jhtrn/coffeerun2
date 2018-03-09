@@ -15,7 +15,6 @@
   }
 
   FormHandler.prototype.addSubmitHandler = function(fn) {
-    /* eslint-disable no-console */
     console.log("Setting submit handler for form");
     this.$formElement.on("submit", function(event) {
       event.preventDefault();
