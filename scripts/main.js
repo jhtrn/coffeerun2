@@ -15,10 +15,15 @@
   var myTruck = new Truck("ncc-1701", remoteDS);
   window.myTruck = myTruck;
   var checkList = new CheckList(CHECKLIST_SELECTOR);
+  var Refresh = App.Refresh;
+  var myrefresh = new Refresh(SERVER_URL);
+  // bind the method reference so its owner is myTruck
   checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));
   var formHandler = new FormHandler(FORM_SELECTOR);
 
-  // bind the method reference so its owner is myTruck
+  //Keeps checklist after refresh browser
+  myrefresh.refreshPage();
+
   formHandler.addSubmitHandler(function(data) {
     myTruck.createOrder.call(myTruck, data);
     checkList.addRow.call(checkList, data);
